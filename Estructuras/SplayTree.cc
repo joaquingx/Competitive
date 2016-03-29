@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+// For more info, you can visit:
+// http://book.huihoo.com/pdf/cs-373-combinatorial-algorithms/
+// CLRS(For amortized Analysis)
 typedef int treetp;
 
 struct Node {
@@ -46,9 +48,17 @@ void Splay(Node * & x)
   {
     Node * y = x->parent;
     Node * z = y->parent;
+    bool yside = !(y->childs[0] == x);
     if(!z) // simple rotation
-      rotate(x);
-    else // double rotation
+      {
+	rotate(x);
+	break;
+      }
+    bool zside = !(z->childs[0] == y);
+    // double rotations
+    if(yside == zside) //zig zig
+      rotate(y) , rotate(x);
+    else // zig zag
       rotate(x) , rotate(x);
   }
   root = x; // maybe unneccesary
@@ -84,7 +94,10 @@ bool Insert(treetp key)
   bool insert=0;
   while(!insert)
     {
-      if(r->data == key) return 0;
+      if(r->data == key){
+	Splay(r); // importante xD
+	return 0;
+      }
       bool side = (r->data < key);
       if(r->childs[side]) r = r->childs[side];
       else
@@ -134,27 +147,17 @@ void Inorder(Node * r)
 
 int main()
 {
-  while(true)
+  ios_base::sync_with_stdio(0);
+  char k;
+  int n,c,rpta; scanf("%d",&n);
+  while(n--)
     {
-      int opt;
-      scanf("%d",&opt);
-      if(opt == 0) // Insert
-	{
-	  treetp v; scanf("%d",&v);
-	  Insert(v);
-	}
-      if(opt == 1) // Find
-	{
-	  treetp v; scanf("%d",&v);
-	  Find(v,root);
-	}
-      if(opt == 2)
-	{
-	  treetp v; scanf("%d",&v);
-	  Erase(v);
-	}
-      if(opt == 3) break;	
-      if(root)Inorder(root), printf("root: %d \n",root->data);
+      scanf(" %c %d",&k,&c);
+      if(k == 'I')
+	Insert(c);
+      if(k == 'D')
+	Erase(c);
     }
+
   return 0;
 }
