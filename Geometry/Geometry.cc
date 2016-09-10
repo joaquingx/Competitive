@@ -114,17 +114,13 @@ bool cmpatan(point A, point B)
 }
 bool cmpcross(point x, point y)
 {
-  point pnt(1,0);
-  if(x.x == origin.x and x.y  == origin.y)
-    return 1;
-  if(y.x  == origin.x and y.y == origin.y)
-    return 0;
-  if(angle(pnt,x-origin) == angle(pnt,y-origin))
+  point ox = x - origin;
+  point oy = y - origin;
+  if( (ox ^ oy) == (oy ^ ox))
     {
-      // cout << x.x <<" "<< x.y << "   " << y.x << " "<< y.y<< "\n" ;
       return (origin - x) <  (origin - y);
     }
-  return  angle(pnt,x-origin) < angle(pnt,y-origin);
+  return (ox ^ oy)  > (oy ^ ox);
 }
 
 point getOrigin(vector<point> & P)
