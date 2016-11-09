@@ -3,6 +3,12 @@ using namespace std;
 vector<vector < int > > Adj;
 vector<int> vis,Topo;
 
+/*
+  Sorting elements in order of the precedence of them. This order is maybe not unique.
+  Topological Sort:
+  dfs(): Saving the topo sort in Topo vector.
+ */
+
 void dfs(int u )
 {
   vis[u] = 1;

@@ -1,5 +1,14 @@
 #include <bits/stdc++.h>
 using namespace std;
+/*
+  To list the strongly connected components(SCC) in a graph.
+  Kosaraju Algorithm:
+  dfs1: Like a Topological Sort but with the condensed Graph.
+  dfs2: For each dfs we obtain a SCC.
+  initGraph(n): Initialization of the Adjacency's List(Original and Transposed Graph).
+  vis,orded,cnx: Visit vector,Topo over Condesed Graph and SCC vector respectively.
+*/
+
 vector<vector < int > > Adj,AdjT;
 vector<int> vis,order,cnx;
 

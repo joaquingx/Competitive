@@ -1,5 +1,16 @@
 #include <bits/stdc++.h>
 using namespace std;
+/*
+  Binary Indexed Tree, Fenwick Tree:
+  
+  init(n): n is the capacity of the tree and is initialized to 0.
+  sum(r): Query, Gives the answer of f([0,r])
+  add(idx,delta): Update, In the index idx add delta.
+  sum(r,l): Query, Gives the answer of f([l,r])
+  init(a): Initializing the tree with a vector.
+
+*/
+
 
 
 struct FenwickTree {

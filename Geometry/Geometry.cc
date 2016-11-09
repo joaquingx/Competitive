@@ -1,6 +1,13 @@
 #include <bits/stdc++.h>
 #include <math.h>
 using namespace std;
+/*
+  Misc of Geometry Algorithms.
+  Attention:
+  Operator ^ is the cross product.
+*/
+
+
 #define PI 3.14159265
 typedef double dd;
 
@@ -89,7 +96,6 @@ dd angle( point A , point B)
   return acos( (A*B) / (norma(A)*norma(B)) ) ;
 }
 
-
 dd lineTopoint(point A , point B, point C, bool segment) // AB defines the line and C is the point
 {
   point AB = B-A; point AC = C-A; point BC = C-B;
@@ -123,7 +129,7 @@ bool cmpcross(point x, point y)
   return (ox ^ oy)  > (oy ^ ox);
 }
 
-point getOrigin(vector<point> & P)
+point getOrigin(vector<point> & P) // The most down point and leftmost.
 {
   point orig = P[0];
   for(int i = 1 ; i < P.size() ; ++i)

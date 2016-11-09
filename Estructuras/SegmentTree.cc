@@ -2,14 +2,19 @@
 #define N int(1e5)
 #define NEUTRO 0
 using namespace std;
-int n; // tama;o del vector
-// definicion ST.
-int st[2*N]; // solo se necesita 2*N.
+/*
+  Typical Segment Tree with nice implementation with bitwise operators.
+  Segment Tree:
+  oper(a,b): associative binary function.  
+  build(): Building the tree, bottom-up.
+  modify(key,value): Update in a point, the new value of the st[key] = value.
+  query(l,r): Query, Gives the answer of f([l,r]).
+*/
 
-// int oper(int a,int b)
-// {
-//   return a+b);
-// }
+
+int n; // size of the vector.
+int st[2*N]; // <- The tree
+
 
 int oper(int a , int b)
 {
@@ -33,8 +38,6 @@ int query(int l , int r )
   int ans = NEUTRO;
   for(l += n , r += n  ;  l < r ; l>>=1 , r>>=1) 
     {
-      // cout << ans << "\n";
-      cout << r << "\n";
       if(l&1) ans= oper(ans,st[l++]);
       if(r&1) ans= oper(ans,st[--r]);
     }

@@ -1,8 +1,20 @@
 #include <bits/stdc++.h>
 using namespace std;
+/*
+  Balanced Binary Search Tree
+  Splay Tree:
+  Find(r,key): Searching for an element, r = root .
+  Insert(key): Inserting key element.
+  Erase(key): Erasing key element.
+  Node * root <- Splay Tree.
+*/
+
 // For more info, you can visit:
 // http://book.huihoo.com/pdf/cs-373-combinatorial-algorithms/
 // CLRS(For amortized Analysis)
+
+
+
 typedef int treetp;
 
 struct Node {

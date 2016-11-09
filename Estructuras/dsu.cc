@@ -1,5 +1,15 @@
 #include <bits/stdc++.h>
 using namespace std;
+
+/*
+  Create,Find and Merge Disjoints Sets in ~O(1) for operation.
+  Disjoint Set Union:
+  dsuCreate: Inicialization of the Dsu.
+  dsuFind(v): Answer the identifier of the set of v belongs using Path Compression.
+  dsuUnion(u,v): Merge u and v, using rank for overcome complexity.
+
+*/
+
 vector<int> p,rating;
 
 void dsuCreate(int u)
