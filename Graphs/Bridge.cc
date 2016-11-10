@@ -1,6 +1,15 @@
 #include <bits/stdc++.h>
 #define MAXN int(1e5)
 using namespace std;
+/*
+  Finding the bridges in a graph.
+  dfs(): Searching for edges that goes to the ancesters, if one of that exists
+  then that edge isn't a bridge.
+  Vars:
+  bridges: Save the edges that are bridges.
+  used: mark the nodes that are used.
+*/
+
 vector< vector< int> >  Adj;
 vector< pair< int , int > > bridges;
 bool used[MAXN];

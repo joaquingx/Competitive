@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 #define MAX int(5*1e6+100) // Numero Maximo de la cadena.
 #define MOD 5000002 // Modulo primo que usariamos xD
-#define PRIME 7 // El primo por el que multiplicaremos continuamente!.
+#define PRIME 7 // El primo por el que multiplicaremos continuamente!. mi x del polinomio
 using namespace std;
 typedef unsigned long long ull;
 int med,n,medb,a,b;
@@ -22,7 +22,7 @@ inline void init()
     }
 }
 
-inline ull GetHash(int a, int b)
+inline ull GetHash(int a, int b)// acumulated sums vaya
 {
   return ihash[b] - ihash[a] * POWS[b-a];// da un segmento del hash en O(1)
 }

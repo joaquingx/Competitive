@@ -1,6 +1,9 @@
 #include <bits/stdc++.h>
 #define NEUTRO -1
 using namespace std;
+/*
+  LCA NOT WORKING GG LA LIFE
+ */
 int n;
 vector<int> st,height,vis,preorder,first;
 vector< vector< int > > Adj;

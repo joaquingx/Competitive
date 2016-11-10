@@ -1,6 +1,16 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+/*
+  SSP Algorithm in O(n^2), it allows negative weights
+  Relax all vertices n-1 times, because the SSP is a 
+  Simple Path, after the n-1 tmes we obtain the min dist(source,v)
+  for all v that is in V.
+  Bellman's Ford Algorithm:
+  bellman(v): v is the source vertex, in d[] we have the dist of all
+  vertices with respect source.
+*/
+
 
 struct edge 
 {

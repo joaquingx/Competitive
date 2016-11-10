@@ -1,5 +1,15 @@
 #include <bits/stdc++.h>
 using namespace std;
+
+/*
+  SSP Algorithm.
+  NiceDijkstra(Grafo,source) : Adjacency list Grafo, vertex source, in dist
+  we save the dist(source,v) for all v that is in V.
+  Vars:
+  List: Adjacency List.
+  now: Priority Queue
+*/
+
 #define INF 2*1e12
 typedef long long ENTERO;
 struct edge{ENTERO to, length;};

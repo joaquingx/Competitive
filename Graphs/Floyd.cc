@@ -1,5 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
+/*
+  All SSP , O(n^3).
+  Floyd Warshall:
+  d[][] = Matrix of distances.
+  init(): Initialization of the distance matrix
+*/
 struct edge
 {
   int to,from,weight;

@@ -1,7 +1,12 @@
 #include <bits/stdc++.h>
 #define MAX 26
-
 using namespace std;
+/*
+  A tree that save characters and can answer the querys of type:
+  is that word in the tree? efficiently.
+  Trie:
+  MAX is the size of the alphabet.
+*/
 
 struct Trie
 {
@@ -21,7 +26,7 @@ struct Trie
   {
     Root = new Node();
   }
-  bool Insert(string cad)
+  void Insert(string cad)
   {
     Node * tmp = Root;
     for(char c : cad)
@@ -30,7 +35,7 @@ struct Trie
 	  tmp->child[c -'a'] = new Node();
 	tmp = tmp->child[ c-'a' ];
       }
-    tmp->isEnded=1;
+    tmp->isEnded=1; // A word ends here!.
   }
   
   bool Find(string cad)
@@ -42,7 +47,7 @@ struct Trie
 	  return 0;
 	tmp = tmp->child[c-'a'];
       }
-    return tmp->isEnded;
+    return tmp->isEnded;//is a word?
   }
 };
 
