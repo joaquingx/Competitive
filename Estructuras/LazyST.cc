@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 #define MAXN int(1e5)
 using namespace std;
+// Based on https://www.hackerearth.com/practice/notes/segment-tree-and-lazy-propagation/
 int A[MAXN],tree[4*MAXN],lazy[4*MAXN];
 
 void build(int node, int start, int end)
